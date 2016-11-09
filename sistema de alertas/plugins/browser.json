@@ -87,6 +87,9 @@
         },
         "plugin.google.maps": {
             "PACKAGE_NAME": "com.innovacion.alertas"
+        },
+        "mx.ferreyra.callnumber": {
+            "PACKAGE_NAME": "com.innovacion.alertas"
         }
     },
     "dependent_plugins": {}
