@@ -1180,10 +1180,10 @@ function sendSMS() {
                     			sendto[i] = sendto[i].trim();
                     		}
                     	}
-                        var options = {
-                            replaceLineBreaks: false, // true to replace \n by a new line, false by default                           
-                        };
-                    	sms.send(sendto, textmsg,options, function(e){
+                        //var options = {
+//                            replaceLineBreaks: false, // true to replace \n by a new line, false by default                           
+//                        };
+                    	SMS.sendSMS(sendto, textmsg, function(e){
                             myApp.alert("El mensaje a sido enviado",'SMS exitoso');
                         }, function(e){
                             myApp.alert('error: '+e, "SMS error");
@@ -1240,7 +1240,6 @@ function view_contacts(){
     }
 //modificar contactos
 function modificar_con(){
-    console.log("jecutando");
     mainView.router.loadPage('contactos _mod.html');
                     navigator.contacts.find(
                         ['displayName', 'name','phoneNumbers'],
@@ -1388,7 +1387,6 @@ function resms(){
 }
 function startWatch() {
         	if(SMS) SMS.startWatch(function(){
-        		myApp.alert('Esperando SMS', 'watching started');
         	}, function(){
         		console.log('Error iniciar watching');
         	});
@@ -1397,7 +1395,6 @@ function startWatch() {
 //parar de checar que lleguen sms        
 function stopWatch() {
         	if(SMS) SMS.stopWatch(function(){
-        		myApp.alert('Se dejo de esperar SMS', 'watching stopped');
         	}, function(){
         		console.log('failed to stop watching');
         	});
