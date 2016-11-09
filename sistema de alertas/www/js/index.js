@@ -890,7 +890,7 @@ function onErrorcall(result) {
 }
 function callNumber(number){
   console.log("Launching Calling Service for number "+number);
-window.plugins.CallNumber.callNumber(onSuccesscall,onErrorcall,number,bypassAppChooser: true);
+window.plugins.CallNumber.callNumber(onSuccesscall,onErrorcall,number,false);
 }
 //verificar ubicacion
 function verify_ubic(){
