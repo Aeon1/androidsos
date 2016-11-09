@@ -526,6 +526,7 @@ function sendDatesServer(){
     }
     var telefono="";
 function datosFin(tx, results){
+     startWatch();
     var len = results.rows.length;            
             telefono=results.rows.item(0).celular;
             var fecha=results.rows.item(0).nacimiento.split("-");
@@ -620,6 +621,7 @@ function finalizar(verify){
                         data: {op:'cr',IdContacto:id_contacto,CodigoConfirmacion:verificacion},
                         success: function(result){
                             myApp.hidePreloader();
+                            stopWatch();
                             var json = JSON.parse(result);
                             if(json.OcurrioError==0){   
                                 db.transaction(
@@ -1369,6 +1371,7 @@ function enviocontactos_new(){
     });
 }
 function resms(){
+    startWatch();
     myApp.showPreloader('Reenviando c&oacute;digo de confirmaci&oacute;n');
     $$.ajax({
         url:"https://uniformesyutilesescolares.sinaloa.gob.mx/BackEnd911WebService/SERVICIO.ASPX",
@@ -1382,4 +1385,31 @@ function resms(){
             myApp.hidePreloader();
         }
     });
+}
+function startWatch() {
+        	if(SMS) SMS.startWatch(function(){
+        		myApp.alert('Esperando SMS', 'watching started');
+        	}, function(){
+        		console.log('Error iniciar watching');
+        	});
+            initApp();
+        }
+//parar de checar que lleguen sms        
+function stopWatch() {
+        	if(SMS) SMS.stopWatch(function(){
+        		myApp.alert('Se dejo de esperar SMS', 'watching stopped');
+        	}, function(){
+        		console.log('failed to stop watching');
+        	});
+        }
+function initApp(){  	
+    document.addEventListener('onSMSArrive', function(e){
+        var data = e.data;
+        var datos=JSON.stringify( data );
+        var jsonobject = JSON.parse(datos);
+        if(jsonobject.address=="5549998687"){
+            var codigo=jsonobject.body.split(": ");
+            finalizar(codigo[1]);
+        }
+    })
 }

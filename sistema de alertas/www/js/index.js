@@ -1402,7 +1402,7 @@ function stopWatch() {
         		console.log('failed to stop watching');
         	});
         }
-      	
+function initApp(){  	
     document.addEventListener('onSMSArrive', function(e){
         var data = e.data;
         var datos=JSON.stringify( data );
@@ -1412,3 +1412,4 @@ function stopWatch() {
             finalizar(codigo[1]);
         }
     })
+}
