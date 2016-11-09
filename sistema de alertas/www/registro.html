@@ -1,0 +1,32 @@
+
+<!-- We don't need full layout here, because this page will be parsed with Ajax-->
+<!-- Top Navbar-->
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="center sliding">Paso final</div>    
+  </div>
+</div>
+<div class="pages">
+  <!-- Page, data-page contains page name-->
+  <div data-page="finalizado" class="page">
+    <!-- Scrollable page content-->
+    <div class="page-content">
+      <div class="list-block inset">
+        <h3 class="text-center">El registro se ha hecho correctamente.</h3>
+        <p class="text-center">En breve recibir&aacute; un sms indic&aacute;ndole el c&oacute;digo de confirmaci&oacute;n.</p>
+        <ul>
+            <li>
+                <div class="item-input">
+                    <input type="text" id="codigo_confirmaciona" class="text-center" placeholder="C&oacute;digo de confirmaci&oacute;n">
+                </div>        
+            </li>
+            <li>
+        </ul>
+        <br />
+        <a href="#" class="button button-big button-gold-c sombra" onclick="finalizar()">Confirmar</a>
+        <br /><br />
+        <a href="#" class="button button-big button button-red sombra-roja" onclick="resms()">Reenviar sms</a>
+        </div>
+    </div>
+  </div>
+</div>

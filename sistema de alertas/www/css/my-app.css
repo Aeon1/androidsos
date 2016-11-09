@@ -1,0 +1,69 @@
+.hide{display: none;}
+.text-center{text-align: center;}
+.button-red{background: #9E2029;border-color: #9E2029;color: white;}
+.button-red:active{
+    background: rgba(126, 32, 41, 1)!important;
+}
+
+.button-green{background: #4CD964;border-color: #4CD964;color: white;}
+.button-gold{background: #E0A319 ;border-color: #E0A319 ;color: white;}
+.button-gold-c{background: #E0A31A ;border-color: #E0A31A ;color: white;}
+.button-gold-c:active{
+    background: #C98B0F!important;
+}
+.gold{color: #C98B0F;}
+#enviando_todo{background: white;margin: 20px;padding: 10px;}
+.sombra{
+-webkit-box-shadow: 0px 5px 1px -1px rgba(181, 124, 26, 1);
+-moz-box-shadow:    0px 5px 1px -1px rgba(181, 124, 26, 1);
+box-shadow:         0px 5px 1px -1px rgba(181, 124, 26, 1);
+}
+.sombra:active{
+-webkit-box-shadow: 0px 3px 1px -1px rgba(181, 124, 26, 1);
+-moz-box-shadow:    0px 3px 1px -1px rgba(181, 124, 26, 1);
+box-shadow:         0px 3px 1px -1px rgba(181, 124, 26, 1);
+}
+.sombra-roja{
+-webkit-box-shadow: 0px 5px 1px -1px rgba(126, 32, 41, 1);
+-moz-box-shadow:    0px 5px 1px -1px rgba(126, 32, 41, 1);
+box-shadow:         0px 5px 1px -1px rgba(126, 32, 41, 1);
+}
+.sombra-roja:active{
+-webkit-box-shadow: 0px 3px 1px -1px rgba(126, 32, 41, 1);
+-moz-box-shadow:    0px 3px 1px -1px rgba(126, 32, 41, 1);
+box-shadow:         0px 3px 1px -1px rgba(126, 32, 41, 1);
+}
+.toolbar:before{background: transparent!important;}
+
+#map{
+  display: block;
+position: relative;
+list-style-type: none;
+margin: auto auto;
+width:90%;
+height: 70%;
+  -moz-box-shadow: 0px 5px 20px #ccc;
+  -webkit-box-shadow: 0px 5px 20px #ccc;
+  box-shadow: 0px 5px 20px #ccc;
+  border-radius: 10px;
+}
+#imgmapa{
+    position: fixed;
+            right: 0;
+            left: 0;
+            top:-32.5%;
+            bottom: 0;
+            margin: auto;
+            z-index: 1001;
+}
+#transmap{
+     height: 10px;width: 10px;background: rgba(0,0,0,0.5);border-radius: 10px;
+            position: fixed;
+            right: 0;
+            left: 0;
+            top:-26.5%;
+            bottom: 0;
+            margin: auto;
+            z-index: 1000;
+            display: none;
+}
