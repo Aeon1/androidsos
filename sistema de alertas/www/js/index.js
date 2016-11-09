@@ -829,7 +829,7 @@ var captureSuccessaudio = function(mediaFiles) {
 };
 // captura de audio con error
 var captureErroraudio = function(error) {
-    navigator.notification.alert('No se grab&oacute; nada', 'Captura');
+    myApp.alert('No se grab&oacute; nada', 'Captura');
 };
 // captura de foto exitosa
 var captureSuccessfoto = function(mediaFiles) {
@@ -844,7 +844,7 @@ var captureSuccessfoto = function(mediaFiles) {
 };
 // captura de foto con error
 var captureErrorfoto = function(error) {
-    navigator.notification.alert('No se captur&oacute; nada', 'Captura');
+    myApp.alert('No se captur&oacute; nada', 'Captura');
 };
 // captura de video exitosa
 var captureSuccessvideo = function(mediaFiles) {
@@ -859,7 +859,7 @@ $$(".video").removeClass('button-gold-c').addClass('active');;
 };
 // captura de video con error
 var captureErrorvideo = function(error) {
-    navigator.notification.alert('No se captur&oacute; nada', 'Captura');
+    myApp.alert('No se captur&oacute; nada', 'Captura');
 };
 //obtencion de las coordenadas exitosa
 function onSuccessC(position) {
