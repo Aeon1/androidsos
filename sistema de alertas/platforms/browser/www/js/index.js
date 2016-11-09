@@ -27,7 +27,7 @@ function onDeviceReady() {
 document.addEventListener("offline", checkConnection, false);
 document.addEventListener("online", checkConnection, false);
  // Initialize your app
-var myApp = new Framework7({});
+var myApp = new Framework7({material:true});
 
 // Export selectors engine
 var $$ = Dom7;
@@ -88,9 +88,9 @@ var titulos={'1':{'titulo':'Violencia contra la mujer','instrucciones':'Describa
                     '24':{'titulo':'Abuso de autoridad','instrucciones':'Describa el incidente y descripci&oacute;n de la autoridad responsable del abuso'}
                     };
 //comprobar nuevamente que el gps este activo
-myApp.onPageBeforeInit('reporte', function(page){
-   id_reporte=page.query.id;
-    $$(page.navbarInnerContainer).find('#title_reporte').html(titulos[id_reporte]['titulo']);
+myApp.onPageBeforeAnimation('reporte', function(page){
+   id_reporte=page.query.id;+
+    $$(page.container).find('#title_reporte').html(titulos[id_reporte]['titulo']);
     $$(page.container).find("#instrucciones").html(titulos[id_reporte]['instrucciones']);
     if(online==1){        
     var path_audio="";
