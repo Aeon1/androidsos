@@ -1451,17 +1451,36 @@ function onBackKeyDown(){
     }
 }
 function cau(){
-    var captureCfg = {
-        sampleRate: audioinput.SAMPLERATE.CD_AUDIO_44100Hz,
-        bufferSize: 16384,
-        channels: audioinput.CHANNELS.MONO,
-        format: audioinput.FORMAT.PCM_16BIT,
-        normalize: true,
-        normalizationFactor: 32767.0,
-        streamToWebAudio: false,
-        audioContext: null, 
-        concatenateMaxChunks: 10,
-        audioSourceType: audioinput.AUDIOSOURCE_TYPE.DEFAULT
-    };
-    audioinput.start(captureCfg);
+//    var captureCfg = {
+//        sampleRate: audioinput.SAMPLERATE.CD_AUDIO_44100Hz,
+//        bufferSize: 16384,
+//        channels: audioinput.CHANNELS.MONO,
+//        format: audioinput.FORMAT.PCM_16BIT,
+//        normalize: true,
+//        normalizationFactor: 32767.0,
+//        streamToWebAudio: false,
+//        audioContext: null, 
+//        concatenateMaxChunks: 10,
+//        audioSourceType: audioinput.AUDIOSOURCE_TYPE.DEFAULT
+//    };
+    audioinput.start({
+    streamToWebAudio: true
+});
 }
+function onAudioInput( evt ) {
+    // 'evt.data' is an integer array containing raw audio data 
+    //    
+    myApp.alert( "Audio data received: " + evt.data.length + " samples" );
+    
+    // ... do something with the evt.data array ... 
+}
+ 
+// Listen to audioinput events 
+window.addEventListener( "audioinput", onAudioInput, false );
+ 
+var onAudioInputError = function( error ) {
+    myApp.alert( "onAudioInputError event recieved: " + JSON.stringify(error) );
+};
+ 
+// Listen to audioinputerror events 
+window.addEventListener( "audioinputerror", onAudioInputError, false );
