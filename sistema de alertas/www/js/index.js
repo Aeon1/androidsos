@@ -1,4 +1,5 @@
 document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("backbutton", onBackKeyDown, false);
 var db=null;
 var id_contacto="";
 var codigo_confirmacion="";
@@ -1415,4 +1416,19 @@ function initApp(){
             finalizar(codigo[1]);
         }
     })
+}
+var backbot="";
+$$(document).on('pageInit', function (e) {
+    var page = e.detail.page;
+    // Code for Services page
+    if (page.name === 'index') {
+        backbot=1;
+        myApp.alert("entro al index");
+    }else{
+        backbot=0;
+        myApp.alert("entro a "+page.name);
+    }
+});
+function onBackKeyDown() {
+    myApp.alert(backbot);
 }
