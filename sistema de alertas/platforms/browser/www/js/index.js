@@ -1432,7 +1432,7 @@ function onBackKeyDown(){
     if(backbot=="s"){
         myApp.modal({
         title:  'Salir',
-        text: '&iquest;Desea cerrar la app?',
+        text: '&iquest;Desea cerrar SOS Sinaloa?',
         buttons: [          
           {
             text: 'Cancelar',
