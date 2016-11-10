@@ -238,5 +238,13 @@
         },
         "is_top_level": false,
         "variables": {}
+    },
+    "cordova-plugin-audio-recorder-api": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-audio-recorder-api@*"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

@@ -682,6 +682,14 @@ module.exports = [
         "clobbers": [
             "audioinput"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-audio-recorder-api/www/AudioRecorderAPI.js",
+        "id": "cordova-plugin-audio-recorder-api.AudioRecorderAPI",
+        "pluginId": "cordova-plugin-audio-recorder-api",
+        "clobbers": [
+            "window.plugins.audioRecorderAPI"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -716,7 +724,8 @@ module.exports.metadata =
     "plugin.google.maps": "1.3.9",
     "mx.ferreyra.callnumber": "0.0.2",
     "cordova-plugin-compat": "1.1.0",
-    "cordova-plugin-audioinput": "0.3.0"
+    "cordova-plugin-audioinput": "0.3.0",
+    "cordova-plugin-audio-recorder-api": "0.0.1"
 }
 // BOTTOM OF METADATA
 });

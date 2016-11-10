@@ -93,6 +93,9 @@
         },
         "cordova-plugin-audioinput": {
             "PACKAGE_NAME": "com.innovacion.alertas"
+        },
+        "cordova-plugin-audio-recorder-api": {
+            "PACKAGE_NAME": "com.innovacion.alertas"
         }
     },
     "dependent_plugins": {
