@@ -1472,5 +1472,5 @@ function cau(){
 }, function(msg) {
   alert('ko: ' + msg);
 }, 3);
-}
+})
 }
