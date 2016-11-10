@@ -674,6 +674,14 @@ module.exports = [
         "clobbers": [
             "call"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-audioinput/www/audioInputCapture.js",
+        "id": "cordova-plugin-audioinput.AudioInput",
+        "pluginId": "cordova-plugin-audioinput",
+        "clobbers": [
+            "audioinput"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -706,7 +714,9 @@ module.exports.metadata =
     "com.cordova.plugins.sms": "0.1.10",
     "cordova-sms-plugin": "0.1.11",
     "plugin.google.maps": "1.3.9",
-    "mx.ferreyra.callnumber": "0.0.2"
+    "mx.ferreyra.callnumber": "0.0.2",
+    "cordova-plugin-compat": "1.1.0",
+    "cordova-plugin-audioinput": "0.3.0"
 }
 // BOTTOM OF METADATA
 });

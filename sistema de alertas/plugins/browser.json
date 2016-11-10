@@ -90,7 +90,14 @@
         },
         "mx.ferreyra.callnumber": {
             "PACKAGE_NAME": "com.innovacion.alertas"
+        },
+        "cordova-plugin-audioinput": {
+            "PACKAGE_NAME": "com.innovacion.alertas"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.innovacion.alertas"
+        }
+    }
 }

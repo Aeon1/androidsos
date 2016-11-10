@@ -1449,5 +1449,19 @@ function onBackKeyDown(){
         myApp.closePanel();
         mainView.router.loadPage('iniciar.html');        
     }
-    
+}
+function cau(){
+    var captureCfg = {
+        sampleRate: audioinput.SAMPLERATE.CD_AUDIO_44100Hz,
+        bufferSize: 16384,
+        channels: audioinput.CHANNELS.MONO,
+        format: audioinput.FORMAT.PCM_16BIT,
+        normalize: true,
+        normalizationFactor: 32767.0,
+        streamToWebAudio: false,
+        audioContext: null, 
+        concatenateMaxChunks: 10,
+        audioSourceType: audioinput.AUDIOSOURCE_TYPE.DEFAULT
+    };
+    audioinput.start(captureCfg);
 }
