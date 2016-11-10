@@ -1141,14 +1141,13 @@ html:not(.watch-active-state) .subnavbar a.link:active:before,
   font-size: 20px;
   font-weight: 500;
   text-align: center;
-  margin: 0 16px;
+  margin:auto;
   position: relative;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   line-height: 56px;
   display: inline-block;
-  text-align: left;
 }
 .navbar .left,
 .subnavbar .left,
