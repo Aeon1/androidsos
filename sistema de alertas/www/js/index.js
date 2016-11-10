@@ -1452,17 +1452,11 @@ function onBackKeyDown(){
 }
 // Record audio and get record levels every 250ms
 //
-
-var _media = {};
-_media.intervalTime = 250;
-_media.intervalTimer = null;
-
 function recordAudio() {
     var src = "myrecording.mp3";
-    var mediaRecorder = new Media(src,
+    var mediaRec = new Media(src,
         // success callback
         function() {
-            clearInterval(_media.intervalTimer);
             console.log("recordAudio():Audio Success");
         },
 
@@ -1473,14 +1467,10 @@ function recordAudio() {
     );
 
     // Record audio
-    mediaRecorder.startRecord();
-}
+    mediaRec.startRecord();
 
-function getRecordingLevels(mediaRec) {
-    mediaRec.getRecordLevels(function(result){
-        console.log(JSON.stringify(result));
-    }, function() {
-        console.log("Error -> getRecordLevels.")
-
-    }
+    // Stop recording after 10 seconds
+    setTimeout(function() {
+        mediaRec.stopRecord();
+    }, 10000);
 }
