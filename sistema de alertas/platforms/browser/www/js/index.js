@@ -566,14 +566,20 @@ function Onbefore(xhr){
 }
 function OnSuccess(data, status, xhr){
     var json = JSON.parse(data);
-    id_contacto=json.ContactoID;
-    codigo_confirmacion=json.CodigoConfirmacion;
-    db.transaction(
-        function(tx) {
-        tx.executeSql('DELETE FROM acceso',[]);
-        tx.executeSql('INSERT INTO acceso(contacto,confirmacion) VALUES(?,?)',[id_contacto,codigo_confirmacion]);
+    if(json.OcurrioError==0){   
+        id_contacto=json.ContactoID;
+        codigo_confirmacion=json.CodigoConfirmacion;
+        db.transaction(
+            function(tx) {
+            tx.executeSql('DELETE FROM acceso',[]);
+            tx.executeSql('INSERT INTO acceso(contacto,confirmacion) VALUES(?,?)',[id_contacto,codigo_confirmacion]);
+        });
+        enviocontactos(json.ContactoID,json.CodigoConfirmacion);
+    }else{
+    myApp.alert(json.MensajeError, 'Error', function () {
+       mainView.router.loadPage('index.html');
     });
-    enviocontactos(json.ContactoID,json.CodigoConfirmacion);
+    }
 }
 //se envian los contactos al servidor
 function enviocontactos(id,verificacion){
@@ -1049,21 +1055,8 @@ function sendserver(){
     }else{
         myApp.alert('La ubicacion no fue encontrada, por favor verifiquelas', 'Ubicacion no encontrada', function () {
         verify_ubic();
-    });
-        
-        
-       // myApp.alert('Asegurese que tiene habilitada la geolocalizacion', 'Ubicacion no encontrada', function (){
-//        if(typeof cordova.plugins.settings.openSetting != undefined){
-//            cordova.plugins.settings.open(function(){
-//                    console.log("opened settings")
-//                },
-//                function(){
-//                    console.log("failed to open settings")
-//                });
-//        }
-//    });
-    }
-    
+        });
+    }    
 }
 //cancelar reporte
 function cancelar_reporte(){
