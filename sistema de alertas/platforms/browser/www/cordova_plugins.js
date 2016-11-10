@@ -690,6 +690,30 @@ module.exports = [
         "clobbers": [
             "window.plugins.audioRecorderAPI"
         ]
+    },
+    {
+        "file": "plugins/cordova-media-with-compression/www/MediaError.js",
+        "id": "cordova-media-with-compression.MediaError",
+        "pluginId": "cordova-media-with-compression",
+        "clobbers": [
+            "window.MediaError"
+        ]
+    },
+    {
+        "file": "plugins/cordova-media-with-compression/www/Media.js",
+        "id": "cordova-media-with-compression.Media",
+        "pluginId": "cordova-media-with-compression",
+        "clobbers": [
+            "window.Media"
+        ]
+    },
+    {
+        "file": "plugins/cordova-media-with-compression/www/browser/Media.js",
+        "id": "cordova-media-with-compression.BrowserMedia",
+        "pluginId": "cordova-media-with-compression",
+        "clobbers": [
+            "window.Media"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -725,7 +749,8 @@ module.exports.metadata =
     "mx.ferreyra.callnumber": "0.0.2",
     "cordova-plugin-compat": "1.1.0",
     "cordova-plugin-audioinput": "0.3.0",
-    "cordova-plugin-audio-recorder-api": "0.0.1"
+    "cordova-plugin-audio-recorder-api": "0.0.1",
+    "cordova-media-with-compression": "2.1.0"
 }
 // BOTTOM OF METADATA
 });

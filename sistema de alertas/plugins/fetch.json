@@ -246,5 +246,13 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "cordova-media-with-compression": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-media-with-compression@*"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

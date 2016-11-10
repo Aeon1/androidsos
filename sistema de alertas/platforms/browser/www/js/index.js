@@ -1450,3 +1450,37 @@ function onBackKeyDown(){
         mainView.router.loadPage('iniciar.html');        
     }
 }
+// Record audio and get record levels every 250ms
+//
+
+var _media = {};
+_media.intervalTime = 250;
+_media.intervalTimer = null;
+
+function recordAudio() {
+    var src = "myrecording.mp3";
+    var mediaRecorder = new Media(src,
+        // success callback
+        function() {
+            clearInterval(_media.intervalTimer);
+            console.log("recordAudio():Audio Success");
+        },
+
+        // error callback
+        function(err) {
+            console.log("recordAudio():Audio Error: "+ err.code);
+        }
+    );
+
+    // Record audio
+    mediaRecorder.startRecord();
+}
+
+function getRecordingLevels(mediaRec) {
+    mediaRec.getRecordLevels(function(result){
+        console.log(JSON.stringify(result));
+    }, function() {
+        console.log("Error -> getRecordLevels.")
+
+    }
+}

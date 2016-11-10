@@ -96,6 +96,9 @@
         },
         "cordova-plugin-audio-recorder-api": {
             "PACKAGE_NAME": "com.innovacion.alertas"
+        },
+        "cordova-media-with-compression": {
+            "PACKAGE_NAME": "com.innovacion.alertas"
         }
     },
     "dependent_plugins": {
