@@ -541,6 +541,7 @@ function datosFin(tx, results){
                             PrimerApellido:results.rows.item(0).apellido_p,
                             SegundoApellido:results.rows.item(0).apellido_m,
                             FechaNacimiento:nacimiento,
+                            Sexo:results.rows.item(0).sexo,
                             EnfermedadesCronicas:results.rows.item(0).enfermedad,
                             TipoSangre:results.rows.item(0).sangre,
                             Calle:results.rows.item(0).calle,
@@ -1417,18 +1418,39 @@ function initApp(){
         }
     })
 }
-var backbot="";
-$$(document).on('pageInit', function (e) {
+var backbot="x";
+$$(document).on('pageInit', function(e){
     var page = e.detail.page;
     // Code for Services page
-    if (page.name === 'index') {
-        backbot=1;
-        myApp.alert("entro al index");
-    }else{
-        backbot=0;
-        myApp.alert("entro a "+page.name);
+    if (page.name === 'index' || page.name === 'iniciar') {
+        backbot="s";
+    }else{        
+        backbot="b";
     }
 });
-function onBackKeyDown() {
-    myApp.alert(backbot);
+function onBackKeyDown(){
+    if(backbot=="s"){
+        myApp.modal({
+        title:  'Salir',
+        text: '&iquest;Desea cerrar la app?',
+        buttons: [          
+          {
+            text: 'Cancelar',
+            onClick: function(){
+              myApp.closeModal();
+            }
+          },
+          {
+            text: 'Salir',
+            onClick: function(){
+                navigator.app.exitApp();
+            }
+          },
+        ]
+      })
+    }else{
+        myApp.closePanel();
+        mainView.router.loadPage('iniciar.html');        
+    }
+    
 }
