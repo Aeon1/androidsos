@@ -1450,27 +1450,3 @@ function onBackKeyDown(){
         mainView.router.loadPage('iniciar.html');        
     }
 }
-// Record audio and get record levels every 250ms
-//
-function recordAudio() {
-    var src = "myrecording.mp3";
-    var mediaRec = new Media(src,
-        // success callback
-        function() {
-            console.log("recordAudio():Audio Success");
-        },
-
-        // error callback
-        function(err) {
-            console.log("recordAudio():Audio Error: "+ err.code);
-        }
-    );
-
-    // Record audio
-    mediaRec.startRecord();
-
-    // Stop recording after 10 seconds
-    setTimeout(function() {
-        mediaRec.stopRecord();
-    }, 10000);
-}
