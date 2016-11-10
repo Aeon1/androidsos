@@ -825,11 +825,13 @@ var captureSuccessaudio = function(mediaFiles) {
     }
     mimeType_xa=mimeType;
     path_audio=path;
-    $$(".audio").removeClass('button-gold-c').addClass('active');;
+    $$(".audio").removeClass('button-gold-c').addClass('activex');;
 };
 // captura de audio con error
 var captureErroraudio = function(error) {
     myApp.alert('No se grab&oacute; nada', 'Captura');
+    $$(".audio").removeClass('activex').addClass('button-gold-c');
+    path_audio="";
 };
 // captura de foto exitosa
 var captureSuccessfoto = function(mediaFiles) {
@@ -840,11 +842,13 @@ var captureSuccessfoto = function(mediaFiles) {
     }
     mimeType_xf=mimeType;
    path_foto=path ;
-   $$(".foto").removeClass('button-gold-c').addClass('active');
+   $$(".foto").removeClass('button-gold-c').addClass('activex');
 };
 // captura de foto con error
 var captureErrorfoto = function(error) {
     myApp.alert('No se captur&oacute; nada', 'Captura');
+    $$(".foto").removeClass('activex').addClass('button-gold-c');
+    path_foto="";
 };
 // captura de video exitosa
 var captureSuccessvideo = function(mediaFiles) {
@@ -855,11 +859,13 @@ var captureSuccessvideo = function(mediaFiles) {
     }
     mimeType_xv=mimeType;
 path_video=path;
-$$(".video").removeClass('button-gold-c').addClass('active');;
+$$(".video").removeClass('button-gold-c').addClass('activex');;
 };
 // captura de video con error
 var captureErrorvideo = function(error) {
     myApp.alert('No se captur&oacute; nada', 'Captura');
+    $$(".video").removeClass('activex').addClass('button-gold-c');
+    path_video="";
 };
 //obtencion de las coordenadas exitosa
 function onSuccessC(position) {
