@@ -1371,20 +1371,24 @@ function enviocontactos_new(){
     });
 }
 function resms(){
-    startWatch();
-    myApp.showPreloader('Reenviando c&oacute;digo de confirmaci&oacute;n');
-    $$.ajax({
-        url:"https://uniformesyutilesescolares.sinaloa.gob.mx/BackEnd911WebService/SERVICIO.ASPX",
-        method: "POST", 
-        data: {op:'rsms',IdContacto:id_contacto,CodigoConfirmacion:codigo_confirmacion},
-        success: function(result){
-            myApp.hidePreloader();
-        }, 
-        error: function(result){ 
-            myApp.alert('Ocurrio un error al intentar reeenviar el c&oacute;digo de confirmaci&oacute;n', 'Error');
-            myApp.hidePreloader();
-        }
-    });
+    if(id_contacto!="" && codigo_confirmacion!=""){
+        startWatch();
+        myApp.showPreloader('Reenviando c&oacute;digo de confirmaci&oacute;n');
+        $$.ajax({
+            url:"https://uniformesyutilesescolares.sinaloa.gob.mx/BackEnd911WebService/SERVICIO.ASPX",
+            method: "POST", 
+            data: {op:'rsms',IdContacto:id_contacto,CodigoConfirmacion:codigo_confirmacion},
+            success: function(result){
+                myApp.hidePreloader();
+            }, 
+            error: function(result){ 
+                myApp.alert('Ocurrio un error al intentar reeenviar el c&oacute;digo de confirmaci&oacute;n', 'Error');
+                myApp.hidePreloader();
+            }
+        });  
+    }else{
+        myApp.alert('Debe completar el registro para poder utilizar esta funci&oacute;n', 'Error');
+    }    
 }
 function startWatch() {
         	if(SMS) SMS.startWatch(function(){
