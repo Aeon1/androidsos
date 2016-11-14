@@ -68,7 +68,7 @@ var titulos={'1':{'titulo':'Violencia contra la mujer','instrucciones':'Describa
                     '3':{'titulo':'Violencia f&iacute;sica (ri&ntilde;a)','instrucciones':'Describa lo sucedido y descripci&oacute;n del afectado y/o responsable'},
                     '4':{'titulo':'Violencia infantil','instrucciones':'Describa lo sucedido y descripci&oacute;n del afectado y/o responsable'},
                     '5':{'titulo':'Homicidio','instrucciones':'Describa lo sucedido y descripci&oacute;n del afectado y/o responsable'},
-                    '6':{'titulo':'Privaci&oacute;n ilegal de la libertad','instrucciones':'Describa las caracteristicas del privado y/o de los responsables'},
+                    '6':{'titulo':'Privaci&oacute;n ilegal de la libertad','instrucciones':'Describa las caracter&iacute;sticas del privado y/o de los responsables'},
                     '7':{'titulo':'Robo de veh&iacute;culo','instrucciones':'Describa el modelo, placas, color, etc. acerca de su carro y la descripci&oacute;n de los hechos o del asaltante en cuestion'},
                     '8':{'titulo':'Robo a comercio','instrucciones':'Describa el incidente y/o descripci&oacute;n de los responsables'},
                     '9':{'titulo':'Robo a trasporte p&uacute;blico','instrucciones':'Describa el incidente y/o descripci&oacute;n de los responsables'},
@@ -83,7 +83,7 @@ var titulos={'1':{'titulo':'Violencia contra la mujer','instrucciones':'Describa
                     '18':{'titulo':'Accidente vehicular tipo volcadura','instrucciones':'Describa los hechos ocurridos en el incidente'},
                     '19':{'titulo':'Emergencia m&eacute;dica persona inconsciente','instrucciones':'Describa los hechos ocurridos en el incidente'},
                     '20':{'titulo':'Emergencia m&eacute;dica ataque por convulciones','instrucciones':'Describa los hechos ocurridos en el incidente'},
-                    '21':{'titulo':'Emergencia m&eacute;dica ataque cardiaco','instrucciones':'Describa los hechos ocurridos en el incidente'},
+                    '21':{'titulo':'Emergencia m&eacute;dica ataque card&iacute;aco','instrucciones':'Describa los hechos ocurridos en el incidente'},
                     '22':{'titulo':'Emergencia m&eacute;dica ca&iacute;da/fractura','instrucciones':'Describa los hechos ocurridos en el incidente'},
                     '23':{'titulo':'Emergencia m&eacute;dica electrocutado','instrucciones':'Describa los hechos ocurridos en el incidente'},
                     '24':{'titulo':'Abuso de autoridad','instrucciones':'Describa el incidente y descripci&oacute;n de la autoridad responsable del abuso'}
@@ -405,7 +405,7 @@ function contactos(){
     myApp.closeNotification(".notifications"); 
     myApp.modal({
     title:  'Aviso',
-    text: '<p>A continuaci&oacute;n se le pedir&aacute; que defina contactos de emergencia, esto con la finalidad de que pueda avisar r&aacute;pidamente desde la aplicaci&oacute;n en caso que sufra alg&uacute;n incidente, estos pueden ser agregados o cambiados en cualquier momento.</p><span>Requiere que autorice el acceso a sus contactos</span>',
+    text: '<p>A continuaci&oacute;n se le pedir&aacute; que defina contactos de emergencia. Esto con la finalidad de que pueda avisar r&aacute;pidamente desde la aplicaci&oacute;n en caso que sufra alg&uacute;n incidente. Estos pueden ser agregados o cambiados en cualquier momento.</p><span>Requiere que autorice el acceso a sus contactos</span>',
     buttons: [
       {
         text: 'Saltar',
@@ -776,7 +776,7 @@ function accidente(){
 function emergencia(){
     var buttons = [
         {
-            text: 'Persona inconsiente',
+            text: 'Persona inconsciente',
             onClick: function () {
                 mainView.router.loadPage('reporte.html?id=19');
                 }
@@ -788,7 +788,7 @@ function emergencia(){
              }
         },
         {
-            text: 'Ataque cardiaco',
+            text: 'Ataque card&iacute;aco',
             onClick: function () {
                 mainView.router.loadPage('reporte.html?id=21');
              }
@@ -1055,7 +1055,7 @@ function sendserver(){
                         }
     });
     }else{
-        myApp.alert('La ubicacion no fue encontrada, por favor verifiquelas', 'Ubicacion no encontrada', function () {
+        myApp.alert('La ubicaci&oacute;n no fue encontrada, por favor verifiquelas', 'Ubicaci&oacute;n no encontrada', function () {
         verify_ubic();
         });
     }    
@@ -1083,7 +1083,7 @@ function fail(error) {
         mainView.router.loadPage('final.html?folio='+promad);
         console.log("no se pudo enviar el archivo");
     }
-    alert("An error has occurred: Code = " + error.code);
+    //alert("An error has occurred: Code = " + error.code);
     console.log("upload error source " + error.source);
     console.log("upload error target " + error.target);
 }
@@ -1394,11 +1394,11 @@ function resms(){
 }
 function startWatch() {
         	if(SMS) SMS.startWatch(function(){
-        	   initApp();
+        	   
         	}, function(){
         		console.log('Error iniciar watching');
         	});
-            
+            initApp();
         }
 //parar de checar que lleguen sms        
 function stopWatch() {
@@ -1422,7 +1422,7 @@ var backbot="x";
 $$(document).on('pageInit', function(e){
     var page = e.detail.page;
     // Code for Services page
-    if (page.name === 'index' || page.name === 'iniciar' || page.name === 'aviso' || page.name === 'direccion' || page.name === 'personalDates' || page.name ==='contactos') {
+    if (page.name === 'index' || page.name === 'iniciar' || page.name === 'aviso' || page.name === 'direccion' || page.name === 'personalDates' || page.name === 'contactos') {
         backbot="s";
     }else{        
         backbot="b";
