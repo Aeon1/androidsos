@@ -112,7 +112,7 @@ function iniciar(){
        
 function showAlert() {
     mainView.router.loadPage('iniciar.html');
-    myApp.alert("Algunas caracteristicas no estaran disponibles","Internet no detectado");
+    myApp.alert("Algunas caracter&iacute;sticas no estaran disponibles","Internet no detectado");
     
     }
 
@@ -559,7 +559,7 @@ function datosFin(tx, results){
 }
 function OnError(xhr, status){
     myApp.hidePreloader();
-        myApp.alert("ocurrio un error, intente de nuevo","Error");
+        myApp.alert("ocurri&oacute; un error, intente de nuevo","Error");
 }
 function Onbefore(xhr){
     console.log("enviando mensaje");
@@ -601,7 +601,7 @@ function enviocontactos(id,verificacion){
                             mainView.router.loadPage('registro.html');
                          }, 
                         error: function(result){ 
-                            myApp.alert('Ocurrio un error al registrar el contacto de emergencia '+results.rows.item(i).nombre, 'Error');
+                            myApp.alert('Ocurri&oacute; un error al registrar el contacto de emergencia '+results.rows.item(i).nombre, 'Error');
                             myApp.hidePreloader();
                         }
                         });  
@@ -642,7 +642,7 @@ function finalizar(verify){
                             }
                         }, 
                         error: function(result){ 
-                            myApp.alert('Ocurrio un error al intentar la verificaci&oacute;n', 'Error');
+                            myApp.alert('Ocurri&oacute; un error al intentar la verificaci&oacute;n', 'Error');
                             myApp.hidePreloader();
                         }
                         });
@@ -1047,7 +1047,7 @@ function sendserver(){
                             }
                         }, 
                         error: function(result){ 
-                            myApp.alert('Ocurrio un error al intentar la verificacion', 'Error');
+                            myApp.alert('Ocurri&oacute; un error al intentar la verificacion', 'Error');
                             $$("#aviso_importante").css('display', 'block');
                             $$("#enviando_todo").css('display', 'none');
                         }
@@ -1337,7 +1337,7 @@ function boygunew(){
                              });                             
                          }, 
                         error: function(result){ 
-                            myApp.alert('Ocurrio un error al registrar el contacto de emergencia ', 'Error');
+                            myApp.alert('Ocurri&oacute; un error al registrar el contacto de emergencia ', 'Error');
                             myApp.hidePreloader();
                         }
                         });
@@ -1362,7 +1362,7 @@ function enviocontactos_new(){
                             view_contacts();
                          }, 
                         error: function(result){ 
-                            myApp.alert('Ocurrio un error al registrar el contacto de emergencia '+results.rows.item(i).nombre, 'Error');
+                            myApp.alert('Ocurri&oacute; un error al registrar el contacto de emergencia '+results.rows.item(i).nombre, 'Error');
                             myApp.hidePreloader();
                         }
                         });  
@@ -1382,7 +1382,7 @@ function resms(){
                 myApp.hidePreloader();
             }, 
             error: function(result){ 
-                myApp.alert('Ocurrio un error al intentar reeenviar el c&oacute;digo de confirmaci&oacute;n', 'Error');
+                myApp.alert('Ocurri&oacute; un error al intentar reeenviar el c&oacute;digo de confirmaci&oacute;n', 'Error');
                 myApp.hidePreloader();
             }
         });  
@@ -1420,7 +1420,7 @@ var backbot="x";
 $$(document).on('pageInit', function(e){
     var page = e.detail.page;
     // Code for Services page
-    if (page.name === 'index' || page.name === 'iniciar' || page.name === 'aviso' || page.name === 'direccion' || page.name === 'personalDates') {
+    if (page.name === 'index' || page.name === 'iniciar' || page.name === 'aviso' || page.name === 'direccion' || page.name === 'personalDates' || page.name ==='contactos') {
         backbot="s";
     }else{        
         backbot="b";
