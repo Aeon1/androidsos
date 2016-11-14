@@ -1392,10 +1392,11 @@ function resms(){
 }
 function startWatch() {
         	if(SMS) SMS.startWatch(function(){
+        	   initApp();
         	}, function(){
         		console.log('Error iniciar watching');
         	});
-            initApp();
+            
         }
 //parar de checar que lleguen sms        
 function stopWatch() {
@@ -1419,7 +1420,7 @@ var backbot="x";
 $$(document).on('pageInit', function(e){
     var page = e.detail.page;
     // Code for Services page
-    if (page.name === 'index' || page.name === 'iniciar') {
+    if (page.name === 'index' || page.name === 'iniciar' || page.name === 'aviso' || page.name === 'direccion' || page.name === 'personalDates') {
         backbot="s";
     }else{        
         backbot="b";
