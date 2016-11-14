@@ -1394,11 +1394,10 @@ function resms(){
 }
 function startWatch() {
         	if(SMS) SMS.startWatch(function(){
-        	   
+        	   initApp();
         	}, function(){
         		console.log('Error iniciar watching');
-        	});
-            initApp();
+        	});            
         }
 //parar de checar que lleguen sms        
 function stopWatch() {
